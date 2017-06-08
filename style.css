@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion {
+  font-family: sans-serif;
+  width: 40em;
+  margin: 3% auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.accordion ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.accordion .list .tab .content {
+  background-color: white;
+  /*border: 1px solid gainsboro;*/
+  border-top: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .5s;
+}
+
+.accordion li input {
+  position: absolute;
+  left: -9999px;
+}
+
+.accordion .list .tab .sub-menu {
+  background-color: #D95B44;
+  font-size: 1.3em;
+  display: block;
+  padding: .3em;
+  border-bottom: 2px solid /*skyblue*/ white;
+  cursor: pointer;
+  /*transition: color .5s;*/
+}
+
+.accordion .list .tab .content .food-items {
+  padding: 0 1em 1em 1em;
+}
+
+.accordion .list .tab .content .food-items .header  {
+  margin: 1em 0 .5em 0;
+  /*padding: .4em 0;*/
+}
+
+.accordion .list .tab .content .food-items .topic {
+  margin: .5em 0;
+  font-size: .95em;
+}
+
+.accordion .list .tab .sub-menu:hover {
+  background-color: #BF2942;
+} 
+
+.accordion .list .tab input:checked ~ .content {
+  transition: max-height 2s;
+  max-height: 100em; /* set max-height to a value bigger than your box will ever get */
+}
+
+.accordion .list .tab input:checked + label {
+  color: white;
+  background-color: #BF2942;
+  /*transition: .5s;*/
+}
+
+@media (max-width: 1024px) {
+  .accordion {
+    max-width: 64em;
+  }
+  
+  .accordion .list .tab .content {
+    background-color: snow;
+  }
+  
+  .accordion .list .tab .sub-menu {
+    background-color: #050505;
+    color: lightgray;
+  }
+  
+  .accordion .list .tab .sub-menu:hover {
+    background-color: #404040;
+  }
+  
+  .accordion .list .tab input:checked + label {
+    background-color: #404040;
+  }
+}
+
+@media (max-width: 600px /*37.5em*/) {
+  .accordion {
+    max-width: /*37.5em*/ 100%;
+  }
+  
+  .accordion .list .tab .content {
+   background-color: #E8F1EE;
+  }
+  
+  .accordion .list .tab .sub-menu {
+    background-color: #458b74;
+    text-align: center;
+    color: black;
+  }
+  
+  .accordion .list .tab .sub-menu:hover {
+    background-color: #346857;
+  }
+  
+  .accordion .list .tab input:checked + label {
+    background-color: #346857;
+  }
+}
+
+@media (max-width: 360px) {
+  .accordion {
+    max-width: /*22.5em*/ 100%;
+  }
+  
+  .accordion .list .tab .content {
+    background-color: aliceblue;
+  }
+  
+  .accordion .list .tab .sub-menu {
+    background-color: cornflowerblue;
+  }
+  
+  .accordion .list .tab .sub-menu:hover {
+    background-color: #4B70B2;
+  }
+  
+  .accordion .list .tab input:checked + label {
+    background-color: #4B70B2;
+  }
+}
